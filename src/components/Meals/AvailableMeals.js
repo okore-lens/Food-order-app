@@ -11,7 +11,7 @@ const AvailableMeals = () => {
   async function fetchMeals() {
     setIsLoading(true);
     const response = await fetch(
-      "https://food-app-fe66d-default-rtdb.firebaseio.com/Meals.json"
+      "https://react-food-app-e4f7d-default-rtdb.firebaseio.com/Meals.json"
     );
 
     if (!response.ok) {
@@ -30,6 +30,7 @@ const AvailableMeals = () => {
         price: responseData[key].price,
       });
     }
+    console.log(loadedMeals);
     setMeals(loadedMeals);
     setIsLoading(false);
   }
